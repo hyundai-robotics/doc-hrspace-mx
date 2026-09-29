@@ -1,3 +1,3 @@
-﻿# 안전 주의 사항
+﻿# Safety Precautions
 
-{% include file="ko/safety-notice.md" %}
+{% include file="en/safety-notice.md" %}

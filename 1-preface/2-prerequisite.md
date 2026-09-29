@@ -1,3 +1,3 @@
-﻿## 1.2 사전 지식
+## 1.2 Prior Knowledge
 
-HRSpace4의 기본기능에 익숙하지 않은 분은 먼저 HRSpace4의 기능설명서를 숙지하십시오. (`HRSpace4 주메뉴 - 홈 - 도움말 - 설명서`)
+If you are not familiar with the basic functions of HRSpace4, please first read the HRSpace4 Function Manual. (`HRSpace4 Main Menu - Home - Help - Manual`)

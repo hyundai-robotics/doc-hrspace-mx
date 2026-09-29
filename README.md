@@ -1,1 +1,1 @@
-﻿# Hi5/Hi6/Hi7 제어기 기능설명서 - HRSpace4 확장 모델
+# Hi5/Hi6/Hi7 Controller Function Description - HRSpace4 Extended Model

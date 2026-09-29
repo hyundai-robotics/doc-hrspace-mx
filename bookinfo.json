@@ -3,11 +3,17 @@
     "series": "Hi5/Hi6/Hi7 Controller",
     "title": "Function Manual - HRSpace4 Extensive Model",
     "publisher": "HD Hyundai Robotics",
-    "tocTitle": "Table of Contents",
+    "tocTitle": "목차",
     "tocTitleElements": "[ \"h1\", \"h2\" ]",
     "docId": "HRSPACEMX_EN_001",
     "references": [
-        { "title" : "Hi6 Controller Function Manual - Sensor Synchronization (Conveyor, Press)", "id" : "SENSORSYNC_EN_001" },
-        { "title" : "Hi7 Controller Function Manual - Sensor Synchronization (Conveyor, Press)", "id" : "SENSORSYNC_EN_001" }
+        {
+            "title": "Hi6 컨트롤러 기능 매뉴얼 - 센서 동기화 (컨베이어, 프레스)",
+            "id": "SENSORSYNC_EN_001"
+        },
+        {
+            "title": "Hi7 Controller Function Manual - Sensor Synchronization (Conveyor, Press)",
+            "id": "SENSORSYNC_EN_001"
+        }
     ]
 }

@@ -1,3 +1,3 @@
-﻿# 1. 개요
+# 1. Overview
 
-HRSpace v4.9.2 이상을 기준으로 설명합니다.
+This is based on HRSpace v4.9.2 or higher.

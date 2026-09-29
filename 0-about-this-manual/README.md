@@ -1,2 +1,1 @@
-﻿# 이 설명서에 대하여
-
+﻿# About This Manual

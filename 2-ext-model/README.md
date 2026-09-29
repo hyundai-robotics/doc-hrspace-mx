@@ -1,2 +1,1 @@
-﻿# 2. 확장 모델
-
+# 2. Extended Model
