@@ -1,0 +1,13 @@
+﻿{
+    "langCode": "ko",
+    "series": "Hi5/Hi6/Hi7 제어기",
+    "title": "기능설명서 - HRSpace4 확장 모델",
+    "publisher": "HD현대로보틱스",
+    "tocTitle": "목차",
+    "tocTitleElements": "[ \"h1\", \"h2\" ]",
+    "docId": "HRSPACEMX_KO_001",
+    "references": [
+        { "title" : "Hi6 제어기 기능설명서 - 센서 동기(컨베이어, 프레스)", "id" : "SENSORSYNC_KO_001" },
+        { "title" : "Hi7 제어기 기능설명서 - 센서 동기(컨베이어, 프레스)", "id" : "SENSORSYNC_KO_001" }
+    ]
+}
