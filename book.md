@@ -1,462 +1,442 @@
 ﻿
 [__SOURCE](README.md)
-# Hi5/Hi6/Hi7 제어기 기능설명서 - HRSpace4 확장 모델
-
+# Hi5/Hi6/Hi7 Controller Function Description - HRSpace4 Extension Model
 [__SOURCE](0-about-this-manual/README.md)
-# 이 설명서에 대하여
-
+# About the Manual
 
 [__SOURCE](0-about-this-manual/precautions.md)
-# 사전 주의사항
+# Precautions
 
-{% include file="ko/precautions.md" %}
+{% include file="en/precautions.md" %}
 
 [__SOURCE](0-about-this-manual/safety-notice.md)
-# 안전 주의 사항
+# Safety Cautions
 
-{% include file="ko/safety-notice.md" %}
+{% include file="en/safety-notice.md" %}
+
+{% hint style="danger" %}
+During the execution of a user script, logic errors or unmet execution conditions may cause unexpected robot behavior, potentially resulting in serious injury or death.
+{% endhint %}
 
 [__SOURCE](1-preface/README.md)
-# 1. 개요
+# 1. Preface
 
-HRSpace v4.9.2 이상을 기준으로 설명합니다.
-
+This manual is based on HRSpace v4.9.2 or higher.
 [__SOURCE](1-preface/1-about.md)
-## 1.1 HRSpace4 확장모델에 대하여
+## 1.1 About the HRSpace4 Extension Models
 
-HRSpace4 확장모델은 HRSpace4에 부가적인 확장 기능을 제공하기 위한 DLL 라이브러리 모듈입니다. 이 설명서는 HRSpace4에서 사용할 수 있는 각 확장모델들의 사용방법을 설명합니다.
+The HRSpace4 extension model is a DLL library module designed to provide additional extension functions for HRSpace4. This document describes how to use each of the extension models available in HRSpace4.
 
 <table>
 <tr>
   <td width='60%'><img src="../_assets/intro/model-prop.png"/></td>
-  <td>일부 확장 모델은 모델 속성 대화상자에 소프트웨어 라이브러리 파일이 설정되어 있습니다. 이 설정은 조작할 필요 없으므로 그대로 두십시오.</td>
+  <td>Some extension models have software library files configured in the model properties dialog. This setting does not require manipulation, so please leave it as is.</td>
 </tr>
 </table>
-
 [__SOURCE](1-preface/2-prerequisite.md)
-## 1.2 사전 지식
+## 1.2 Prerequisite
 
-HRSpace4의 기본기능에 익숙하지 않은 분은 먼저 HRSpace4의 기능설명서를 숙지하십시오. (`HRSpace4 주메뉴 - 홈 - 도움말 - 설명서`)
-
+If you are not familiar with the basic functions of HRSpace4, please first read the HRSpace4 Function Manual. (`HRSpace4 Ribbon Menu - Home - Help - Manual`)
 [__SOURCE](2-ext-model/README.md)
-# 2. 확장 모델
-
-
+# 2. Extension Models
 [__SOURCE](2-ext-model/1-safety-fence.md)
-# 2.1. 안전펜스 (Safety Fence)
+# 2.1. Safety Fence
 
+The safety fence is an extension model that allows you to quickly create a fence shape by clicking on the desired area with the mouse and precisely adjust the layout by typing coordinate values at the corner positions.
 
-안전펜스는 원하는 영역에 마우스를 클릭하여 신속하게 펜스 형상을 만들고, 모서리 위치에 좌표값을 타이핑하여 정밀하게 레이아웃을 조정할 수 있는 확장 모델입니다.
+Load the `Jig - Fence` from the library with `Load Model`.
 
-모델 불러오기로 라이브러리의 `Jig - Fence`를 불러옵니다.
-     
 ![](../_assets/load-model.png)
 
 ![](../_assets/safety-fence/load-model-fence.png)
 
-3D화면에는 아직 아무 것도 나타나지 않습니다. 트리창에 생성된 모델에 대해 팝업 메뉴에서 확장 속성을 선택하여 안전펜스 속성 대화상자를 여십시오. (혹은 모델 속성 대화상자에서, ![](../_assets/bt-prop.png) 버튼을 클릭해도 됩니다.)
- 
-![](../_assets/popup-menu-ext-prop.png)
+Nothing appears on the 3D screen yet. Open the `Fence properties` dialog by selecting the `extension properties` from the popup menu for the created model in the tree window. (Or you can click the ![](../_assets/bt-prop.png) button in the model property dialog.)
 
+![](../_assets/popup-menu-ext-prop.png)
 
 ![](../_assets/safety-fence/fence-prop.png)
 
-마우스로 꼭지점 위치들을 클릭하여 펜스 경로를 입력할 수 있습니다. 우선 꼭지점의 좌표값을 정확히 하기 위한 snap 값을 선택하십시오. 이 예에서는 100mm를 선택했습니다.
-`Start Input` 버튼을 눌러 놓고, 마우스로 3D 화면의 grid 표면에 꼭지점들을 좌버튼 클릭하십시오. 클릭한 지점들 사이에 펜스가 생성됩니다. 아래 그림은 7개의 지점을 클릭하여 펜스를 생성한 예입니다.
+You can input the fence path by clicking the vertex positions with the mouse. First, select a `Snap` value to ensure the vertex coordinates are accurate. In this example, 100mm has been selected. Press and hold the `Start Input` button, then left-click on the grid surface of the 3D screen to define the vertices. A fence will be created between the clicked points. The picture below shows an example of a fence created by clicking seven points.
 
 ![](../_assets/safety-fence/fence.png)
 
-`End Input` 버튼을 누르면, 경로 입력이 종료됩니다. 입력된 좌표값들은 펜스 속성의 `FencePath` 범주에서 확인하고, 설계에 맞게 정밀 수정할 수 있습니다.
+Press the `End Input` button to finish inputting the path. The entered coordinate values can be checked in the `FencePath` category of the fence properties and can be modified precisely according to the design.
 
 ![](../_assets/safety-fence/fence-path.png)
 ![](../_assets/safety-fence/fence-path-5y.png)
 
-원하는 좌표값을 더블 클릭하여 수정한 후, `Apply` 버튼을 클릭하면 3D화면에 반영됩니다.
-(`Start Input` 버튼을 다시 누르면, 펜스경로를 처음부터 재입력하게 됩니다.)
+Double-click the desired coordinate values to modify them, and click the `Apply` button to reflect the changes on the 3D screen.
+(Pressing the `Start Input` button again will allow you to re-enter the fence path from the beginning.)
 
-다양한 펜스 속성들을 수정하여 펜스의 타입, 높이, 두께, 철망의 색상, 간격 등을 변경할 수 있습니다. 아래 예는 아까 생성한 철망 타입의 펜스를 유리 타입으로 변경한 예입니다. 스크린(유리)의 색상은 붉은 색, 투명도를 70%로 하여, 아크 용접 셀을 묘사했습니다. (펜스 프레임의 색상은 `리본 메뉴 - 스타일`에서 변경할 수 있습니다.)
+You can modify various fence properties to change the type, height, thickness, wire color, wire gap, and so on. The example below shows the wire-type fence created earlier changed to a glass-type fence. The color of the screen (glass) is red, and the transparency is set to 70% to depict an arc welding cell. (The color of the fence frame can be changed from the `Ribbon Menu - Style`.)
 
 ![](../_assets/safety-fence/glass-type.png)
 
-펜스 사이 열린 공간에 출입문을 만들어 봅시다. 기존 펜스의 자식으로서 모델 불러오기로 펜스 1개를 생성하고 이름을 변경합니다.
+Let's create a door in the open space between the fences. As a child of the existing fence, create one fence using Load Model and rename it.
 
 ![](../_assets/safety-fence/rename-door.png)
 
-새 펜스(출입문)의 확장 속성을 열고 `Start Input` 버튼을 누르십시오. 마우스 좌클릭으로 grid 표면에 2개의 좌표를 지정한 후, `End Input` 버튼을 누르십시오.
+Open the extension properties of the new fence (door) and press the `Start Input` button. After specifying two coordinates on the grid surface with a left-click of the mouse, press the `End Input` button.
 
 ![](../_assets/safety-fence/door-overlap1.png)
 ->
 ![](../_assets/safety-fence/door-overlap2.png)
 
-펜스의 기둥과 출입문의 기둥이 겹치면 위 좌측 그림처럼 부자연스럽게 보일 수 있습니다. 펜스의 `LeftPillar`, `RightPillar` 속성의 체크를 제거하여 펜스의 가장자리 기둥을 제거하십시오.
+If the pillars of the fence overlap with the pillars of the door, they may appear unnatural, as shown in the upper left image. Remove the checks from the `LeftPillar` and `RightPillar` properties of the fence to eliminate the edge pillars of the fence.
 
 ![](../_assets/safety-fence/prop-right-pillar.png)
 
-출입문의 확장 속성과 스타일을 수정하여, 펜스와 유사한 형태로 만드십시오. 마지막으로 `DoorOpenAngle` 속성에 적당한 문 열림 각도(deg.)를 입력하면 출입문이 완성됩니다. 이제 프로젝트 파일을 저장하십시오.
+Modify the extension properties and style of the door to create a similar form to the fence. Finally, input a suitable door opening angle (deg.) in the `DoorOpenAngle` property, and the door will be completed. Now, save the project file.
 
 ![](../_assets/safety-fence/prop-door-open-angle.png)
 ![](../_assets/safety-fence/fence-door-open.png)
-
-
 [__SOURCE](2-ext-model/2-robot-riser.md)
-# 2.2 로봇 보고대 (Robot Riser)
+# 2.2 Robot Riser
 
+The `Robot Riser` is an extension model that allows you to quickly create a robot riser shape of the desired size by entering some key values.
 
-로봇 보고대는 몇 가지 주요 수치를 입력하여 원하는 크기의 보고대 형상을 신속하게 만들 수 있는 확장 모델입니다. 
-
-모델 불러오기로 라이브러리의 `Jig - Riser`를 불러옵니다.
+Load the `Jig - Riser` from the library using the model import function.
 
 ![](../_assets/load-model.png)
 
 ![](../_assets/robot-riser/load-model-riser.png)
 
-디폴트 파라미터로 로봇 보고대 모델이 생성됩니다. 생성된 모델에 대해 팝업 메뉴에서 확장 속성을 선택하여 보고대 속성 대화상자를 여십시오.
+A robot robot riser model is created with default parameters. Open the `Riser Properties` dialog for the robot riser by selecting the `extension properties...` from the popup menu for the created model.
 
 ![](../_assets/robot-riser/popup-menu-ex-prop.png)
 ![](../_assets/robot-riser/riser-prop.png)
 
-대화상자 우측에 크기 속성들이 제공됩니다. `AutoSet` 드롭다운 리스트 박스에서 로봇 타입을 선택하면 그에 맞는 보고대 크기로 속성값들이 자동 설정됩니다.
+`Size` properties are provided on the right side of the dialog. When you select the robot type from the `AutoSet` dropdown list box, the property values are automatically set to the appropriate robot riser size.
 
 ![](../_assets/robot-riser/drop-list.png)
- 
-보고대가 높을수록 안정성을 위해 하단 판넬의 면적이 커야 합니다. 보고대 높이가 1000mm이상일 경우, `Height>1000mm` 체크박스를 켜면 `WidthBottom` 값이 적절히 설정됩니다. (수작업으로 설정해도 됩니다.)
 
-보고대 상단 표면에는 `crd`라는 이름의 좌표계 모델이 있습니다. 이 좌표계의 자식 모델로서 로봇을 불러오기 하면, 상단 표면에 정확히 로봇이 설치됩니다. (혹은, 트리창에서 이미 불러온 로봇을 마우스 왼쪽 버튼으로 드래그하여 `crd`에 드롭해도 됩니다.)
+The higher the robot riser, the larger the area of the lower panel needs to be for stability. If the height of the stand is over 1000mm, checking the `Height>1000mm` checkbox will appropriately set the `WidthBottom` value. (You can also set it manually.)
+
+There is a coordinate system model called `crd` on the top surface of the robot riser. When you load a robot as a child model of this coordinate system, the robot will be installed precisely on the top surface. (Alternatively, you can also drag and drop an already loaded robot from the tree window to `crd` with the left mouse button.)
 
 ![](../_assets/robot-riser/robot-on-crd.png)
-
 [__SOURCE](2-ext-model/3-paint.md)
-# 2.3. 도장 건 (Paint Gun), 도장 작업물 (Paint Work)
+# 2.3. Paint Gun, Paint Work
 
-
-도장 건과 도장 작업물 확장 모델을 이용하면, 시뮬레이션 중 3D 작업물 표면에 도막이 형성되는 모습이 시각적으로 표현됩니다. 작업물의 일부 영역에 도막이 형성되지 않거나 지나치게 중첩되어 형성되는지 여부를 판단하는데 도움을 줍니다.
+Using the `PaintGun` and the `PaintWork` extension model, the simulation visually represents the formation of the coating on the surface of the 3D workpiece. It helps to determine whether the coating is not formed in certain areas of the workpiece or is excessively overlapped.
 
 {% hint style="warning" %}
-도장 응용 기능은 Hi5a 제어기에서만 제공되며, Hi6/Hi7 에서는 현재 제공되지 않습니다.
+The painting application feature is only available on the Hi5a controller, and it is currently not available on Hi6/Hi7.
 {% endhint %}
 
-
-아래와 같은 작업공간이 작성되어 있다고 가정하고, 이 상태에서 도막 형성 기능을 추가해봅시다. 작업공간에는 YP020 2대가 각각 도장건(`tap/bell`)을 장착한 상태로 설치되어 있습니다. 셔틀(`/conveyor/guide`) 위의 작업물(`part`)이 로봇들 사이로 이동하게 되고, 2개의 도장건에서 토출된 도료는 이 작업물 표면에 도막으로 형성되어야 합니다.
+Let’s assume that a workspace like the one below has been created, and we will add the coating formation function in this state. The workspace has two `YP020` units, each equipped with the paint gun (`tap/bell`). The workpiece (`part`) on the shuttle (`/conveyor/guide`) moves between the robots, and the paint discharged from the two paint guns must form a coating on the surface of this workpiece.
 
 ![](../_assets/paint/objective.png)
- 
-우선, 2개의 도장 건 모델 각각에 `MxPaintGun.DLL` 라이브러리를 연결시키십시오.
 
-1. `/YP020/tap/bell/crd`의 모델 속성 대화상자를 엽니다.
-2. 모델확장 입력칸 우측의 ![](../_assets/bt-more.png) 버튼을 클릭합니다.
-3. `/Library/Tool/painting/MxPaintGun.dll`을 선택합니다.
-4. `확인` 버튼을 클릭합니다.
-5. `/YP020_2/tap/bell/crd`에 대해서도 같은 설정을 합니다.
+First, connect the `MxPaintGun.DLL` library to each of the two paint gun models.
+
+1. Open the model property dialog for `/YP020/tap/bell/crd`.
+2. Click the ![](../_assets/bt-more.png) button to the right of the model extension input field.
+3. Select `/Library/Tool/painting/MxPaintGun.dll`.
+4. Click the `OK` button.
+5. Apply the same settings for `/YP020_2/tap/bell/crd`.
 
 ![](../_assets/paint/model-ex-pathname.png)
 
-작업물 모델에 `MxPaintWork.DLL` 라이브러리를 연결시키십시오.
+Connect the `MxPaintWork.DLL` library to the workpiece model.
 
-1. `/conveyor/guide/part`의 모델 속성 대화상자를 엽니다.
-2. 모델확장 입력칸 우측의 ![](../_assets/bt-more.png) 버튼을 클릭합니다.
-3. `/Library/Tool/painting/MxPaintWork.dll`을 선택합니다.
-4. `확인` 버튼을 클릭합니다.
+1. Open the model property dialog for `/conveyor/guide/part`.
+2. Click the ![](../_assets/bt-more.png) button to the right of the model extension input field.
+3. Select `/Library/Tool/painting/MxPaintWork.dll`.
+4. Click the `OK` button.
 
-
-로봇의 출력신호에 따라, 도장 건이 ON/OFF되도록 연결합니다. 아래 JOB의 예와 같이 `Y12` 출력신호로 도장 건을 제어한다고 하면, I/O 연결 모델을 만들어, 두 로봇의 `Y12` 출력을 각 도장건의 `SprayIn` 입력신호로 연결시킵니다.
+Connect the paint gun to be ON/OFF based on the robot's output signal. If, for example, the paint gun is controlled by the `Y12` output signal, create an I/O connection model to connect the `Y12` output of both robots to the `SprayIn` input signal of each paint gun.
 
 ![](../_assets/paint/minitp.png)
 
 ![](../_assets/paint/ioconn.png)
 
-이제 도장 작업물인 `/conveyor/guide/part`에 대해 확장 속성 대화상자를 엽니다.
+Now, open the extension property dialog for the paint work item `/conveyor/guide/part`.
 
 ![](../_assets/paint/popup-menu-ex-prop.png)
 ![](../_assets/paint/paint-work-prop.png)
 
+First, you need to specify the guns to be used for painting. Press the `Add gun` button and specify the T paths for the two paint guns as shown below.
 
-먼저, 도장작업을 할 건들을 지정해줘야 합니다. `Add gun` 버튼을 눌러, 아래와 같이 2개의 도장 건의 T경로를 지정해줍니다.
-
-다음은 도장 면에 대한 지정입니다. 하나의 작업물은 한 개 이상의 face로 구성됩니다. HRSpace의 `리본 메뉴 - 홈 - 부분` 버튼을 누른 후, 작업물에서 도장 작업을 수행할 face들을 마우스로 클릭해 선택하십시오. 만일 단 1개의 face만을 포함하는 작업물이라면 face 선택은 생략할 수 있습니다. (STL 파일 형상이면, face가 1개입니다.)
+Next is the specification regarding the paint faces. A single workpiece can consist of one or more faces. Click on the faces of the workpiece where the painting will be performed using the mouse after pressing the `Ribbon Menu - Home - Parts` button in HRSpace. If the workpiece consists of only one face, you can skip face selection. (If it is an STL file shape, there is only one face.)
 
 ![](../_assets/paint/sel-face.png)
 
-`Add sel. Faces` 버튼을 클릭하면, 선택된 face들이 등록되며, 등록된 face 개수가 대화상자에 표시됩니다. `Clear` 버튼을 누르면 등록이 모두 제거됩니다. 만일 CAD 형상의 mesh가 충분히 작지 않다면 도막이 형상화될 때 시각적인 정교함이 떨어지기 때문에, face 등록 전 mesh를 잘게 나누는 절차를 수행할 수 있습니다. `sub-div.`를 체크하고 길이(mm)를 설정하면, 이 길이 이하로 mesh를 나누어 줍니다. (길이를 작게 할수록 메모리 소모와 연산시간이 길어지므로 유의하십시오.)
+Click the `Add sel. Faces` button to register the selected faces, and the number of registered faces will be displayed in the dialog box. Pressing the `Clear` button will remove all registrations. If the mesh of the CAD shape is not sufficiently small, the visual precision of the coating may be reduced when it is formed, so you may want to divide the mesh into smaller pieces before registering faces. Check `sub-div.` and set the length (mm); this will divide the mesh to lengths less than this value. (Note that the smaller the length, the greater the memory consumption and computation time.)
 
-Face가 1개인 경우는 `auto for single select`를 체크해 두면, HRSpace 프로젝트가 열릴 때 등록 절차가 자동으로 수행됩니다. 프로젝트를 열고 바로 재생버튼을 눌러 도막 형성 시뮬레이션을 보고 싶은 경우 사용할 수 있는 기능입니다.
+In the case of a single face, checking `auto for single select` allows the registration process to be performed automatically when the HRSpace project is opened. This is a feature you can use if you want to open the project and immediately see the coating formation simulation by pressing the play button.
 
-도막을 형성하기 전 작업물의 고유한 재질 색상과 투명도는 모델을 선택하고 리본메뉴의 스타일 그룹에서 조정하면 됩니다.
+Before forming the coating, you can adjust the unique material color and transparency of the workpiece by selecting the model and adjusting it in the style group of the ribbon menu.
 
-도장 건 `/YP020/tap/bell/crd` 의 확장 속성을 열어, 도장 파라미터를 설정해줍니다. 각 속성의 의미는 다음 표와 같습니다.
+Open the extension properties of the paint gun `/YP020/tap/bell/crd` and set the painting parameters. The meanings of each property are as follows.
 
 ![](../_assets/paint/paint-gun-prop.png)
 
-
 <table>
 <tr>
-    <th>속성명</th>
-    <th>설명</th>
-    <th>단위, 범위</th>
+    <th>Property Name</th>
+    <th>Description</th>
+    <th>Unit, Range</th>
 </tr>
 <tr>
     <td>Angle</td>
-    <td>도료의 분사 각도.(원뿔의 중심에서 빗면까지의 각도)</td>
+    <td>The spray angle of the paint. (The angle from the center of the cone to the slope)</td>
     <td>deg</td>
 </tr>
 <tr>
     <td>Length</td>
-    <td>도료의 분사 거리. (원뿔의 높이)</td>
+    <td>The spray distance of the paint. (The height of the cone)</td>
     <td>mm</td>
 </tr>
 <tr>
     <td>AmountMax</td>
-    <td>도막이 형성되는 두께의 최대값.</td>
-    <td>단위 없음</td>
+    <td>The maximum thickness of the coating that can be formed.</td>
+    <td>No unit</td>
 </tr>
 <tr>
     <td>ColorMinUsed</td>
-    <td>최소 색상을 사용할 지 여부.<br>체크하지 않으면, ColorMin, OpacityMin은 무시된다.</td>
+    <td>Whether to use the minimum color.<br>If not checked, ColorMin and OpacityMin will be ignored.</td>
     <td></td>
 </tr>
 <tr>
     <td>ColorMin</td>
-    <td>최소 색상.<br>도료 두께가 최소일 때 표현할 색상을 RGB값으로 설정.</td>
-    <td>RGB값 각각 0~255</td>
+    <td>Minimum color.<br>Set the color to be displayed when the paint thickness is at its minimum using RGB values.</td>
+    <td>RGB values 0~255 each</td>
 </tr>
 <tr>
     <td>OpacityMin</td>
-    <td>최소 불투명도. 도료 두께가 최소일 때 표현할 불투명도를 RGB값으로 설정.</td>
+    <td>Minimum opacity. Set the opacity for the minimum paint thickness using RGB values.</td>
     <td>0~1</td>
 </tr>
 <tr>
     <td>ColorMax</td>
-    <td>최대 색상. 도료 두께가 최대(AmountMax)일 때 표현할 색상을 RGB값으로 설정.</td>
-    <td>RGB값 각각 0~255</td>
+    <td>Maximum color. Set the color to be displayed when the paint thickness is at its maximum (AmountMax) using RGB values.</td>
+    <td>RGB values 0~255 each</td>
 </tr>
 <tr>
     <td>OpacityMax</td>
-    <td>최대 불투명도. 도료 두께가 최대(AmountMax)일 때 표현할 불투명도를 RGB값으로 설정.</td>
+    <td>Maximum opacity. Set the opacity for the maximum paint thickness (AmountMax) using RGB values.</td>
     <td>0~1</td>
 </tr>
 </table>
 
+When paint is continuously sprayed at a certain point on the workpiece surface, the thickness data value of that point continuously increases internally. However, once the thickness reaches the `AmountMax` setting, it no longer increases.
 
-작업물 표면의 어느 지점에 도료를 계속 분사하면 해당 지점의 두께 데이터 값이 내부적으로 계속 증가합니다. 하지만 두께가 AmountMax 설정값에 도달하면 더 이상 증가하지 않습니다.
-
-작업물 표면의 두께 데이터 값에 따라 적절한 색상으로 표현되는데, ColorMinUsed 속성의 체크여부에 따라 아래 표와 같이 2가지 방식 중 하나가 적용됩니다.
+The thickness data value of the workpiece surface is expressed in an appropriate color depending on whether the ColorMinUsed property is checked, as shown in the table below.
 
 <table>
 <tr>
     <th>ColorMinUsed</th>
-    <th>색상 표현</th>
+    <th>Color Representation</th>
 </tr>
 <tr>
-    <td>체크된 경우,<br>(최소색상 사용)</td>
+    <td>Checked,<br>(Minimum color used)</td>
     <td>
-    - 도료 두께가 최소일 때는 ColorMin, OpacityMin으로 지정한 색상, 불투명도로 표현.<br>
-    - 도료 두께가 최대(AmountMax)일 때는 ColorMax, OpacityMax로 지정한 색상, 불투명도로 표현.<br>
-    - 두께가 최소~최대로 변해가면서 색상, 불투명도가 서서히 변해감.
+    - When the paint thickness is minimum, the color and opacity specified by ColorMin and OpacityMin are used for representation.<br>
+    - When the paint thickness is maximum (AmountMax), the color and opacity specified by ColorMax and OpacityMax are used for representation.<br>
+    - The color and opacity transition gradually from minimum to maximum thickness.
     </td>
 </tr>
 <tr>
-    <td>체크되지 않은 경우,<br>(최소색상 미사용)</td>
+    <td>Unchecked,<br>(Minimum color not used)</td>
     <td>
-    - 도료 두께가 최소일 때는 작업물 고유의 색상, 불투명도로 표현.<br>
-    - 도료 두께가 최대(AmountMax)일 때는 ColorMax, OpacityMax로 지정한 색상, 불투명도로 표현.<br>
-    - 두께가 최소~최대로 변해가면서 색상, 불투명도가 서서히 변해감.
+    - When the paint thickness is minimum, the unique color and opacity of the workpiece are used for representation.<br>
+    - When the paint thickness is maximum (AmountMax), the color and opacity specified by ColorMax and OpacityMax are used for representation.<br>
+    - The color and opacity transition gradually from minimum to maximum thickness.
     </td>
 </tr>
 </table>
 
-`/conveyor/guide/part`에 대해 확장속성 대화상자를 엽니다. 시뮬레이션 중에만 도막형성이 수행되도록 하려면 실행시점을 `시뮬레이션`으로 설정하십시오. 시뮬레이션 중이 아닐 때도 도막형성이 수행되도록 하려면 `항상`으로 설정하십시오.
+Open the extension properties dialog for `/conveyor/guide/part`. To ensure the coating formation occurs only during the simulation, set the execution timing to `Simulation`. If you want the coating formation to occur even when not in simulation, set it to `Always`.
 
 ![](../_assets/paint/action-prop.png)
 
-
-이제 설정이 끝났으므로 시뮬레이션을 수행하십시오. `Y12` 신호가 ON이 되면, 도장 건이 ON되면서 도료의 토출이 `ColorMax` 색상의 반투명한 원추형상으로 표현됩니다. 원추가 작업물 `/conveyor/guide/part` 와 겹쳐지는 부분에 도막이 형성되는 모습을 볼 수 있습니다.
+Now that the setup is complete, perform the simulation. When the `Y12` signal becomes ON, the paint gun will turn ON, and the discharge of the paint will be represented as a translucent conical shape of the `ColorMax` color. You will be able to see how the coating forms where the cone overlaps with the workpiece `/conveyor/guide/part`.
 
 ![](../_assets/paint/objective-done.png)
 
-시뮬레이션을 다시 수행할 때는, 작업물의 확장속성 대화상자에서 `Wash out` 버튼을 클릭하여 작업물에 입혀진 도막 색상을 클리어하십시오.
-
+When performing the simulation again, click the `Wash out` button in the workpiece's extension properties dialog to clear the coating color applied to the workpiece.
 [__SOURCE](2-ext-model/4-path-gen-z.md)
-# 2.4. 경로 자동 생성 Z (PathGenZ)
+# 2.4. Path Generation Z (PathGenZ)
 
+Based on the shape of the 3D workpiece imported into the workspace, this function automatically generates a zigzag path for the workpiece surface (face).
 
-작업 공간으로 불러온 3D 작업물의 형상을 기반으로, 작업물 표면(face)에 대한 지그재그(zig-zag) 형태의 경로를 자동으로 생성해주는 기능입니다.
-
-일반적으로 도장 작업의 로봇경로는 아래 그림과 같이 지그재그 형태로 진행하게 됩니다. 진행방향과 작업물 표면에 대한 거리 등을 편리하게 조정하기 위해, `PathGenZ` 모듈은 `투영면(projection-plane)`이라는 가상의 평면물체의 형태로 표현됩니다. 이 평면은 다른 HRSpace 모델과 마찬가지로 HRSpace의 시프트 기능을 이용하여 마우스로 자유롭게 이동, 회전시킬 수 있습니다.
+In general, the robot path for painting operations proceeds in a zigzag shape as shown in the figure below. To conveniently adjust the direction of progress and the distance to the workpiece surface, the `PathGenZ` module is represented as a virtual plane object called the `projection-plane`. This plane can be freely moved and rotated using the `Gizmo` function of HRSpace, just like other HRSpace models.
 
 ![](../_assets/path-gen-z/proj-plane.png)
 
-그림에서 보인 바와 같이, 투영면을 횡단하는 각각의 직선 경로를 획, 즉 `스트로크(stroke)`라고 하며, 스트로크 간의 간격을 `피치(pitch)`라고 합니다. 이 스트로크들을 물체 표면에 그림자처럼 투영되어 경로를 만듭니다.
-또한, 깨끗한 도장작업을 위해서는 작업물 가장자리 바깥쪽으로 경유점 스텝들이 있어야 합니다. 가장자리와 경유점 스텝 간의 거리를 아래 그림처럼, `진입 방향 옵셋(inward-offset)`과 `진출 방향 옵셋(outward-offset)`이라고 합니다.
+As shown in the figure, each straight path crossing the projection plane is referred to as a stroke, and the distance between strokes is called the pitch. These strokes create a path projected onto the surface of the object like a shadow.
+Additionally, for a clean painting operation, there must be waypoint steps outside the edges of the workpiece. The distances between the edge and the waypoint steps are referred to as the `inward-offset` and `outward-offset`, represented as shown in the figure below.
 
- ![](../_assets/path-gen-z/offset.png)
+![](../_assets/path-gen-z/offset.png)
 
-작업 공간이 아래와 같이 준비되어 있다고 가정합시다. 도장 로봇 1대(YP020)와 도장 작업물(part) 한 개가 배치되어 있고, 툴은 tcp1으로 설정되어 있으며, 빈 작업 프로그램(0005.JOB)이 생성되어 있습니다. 도막이 가시화되도록 도장 건 출력신호(`/YP020/Y5`)가 로봇에 장착된 도장 건(bell)에 연결되어 있습니다. 도장 작업물(part)에는 도장 건의 T경로가 지정되어 있습니다. (도막 가시화 설정에 대해서는 2.3절을 참고하십시오.)
+Assuming the workspace is prepared as follows: one painting robot (YP020) and one painting workpiece (part) are placed, the tool is set to `tcp1`, and an empty work program (0005.JOB) has been created. The paint gun output signal (`/YP020/Y5`) is connected to the paint gun (bell) attached to the robot to visualize the coating. A T path for the paint gun has been specified for the painting workpiece (part). (For details on the coating visualization settings, refer to Section 2.3.)
 
 ![](../_assets/path-gen-z/pathgen-test.png)
 
-먼저 작업 공간에 경로 자동 생성 모델 `{LIBRARY}/PathGen/PathGenZ`를 불러옵니다. 시프트 기능을 켜고 투영면의 위치와 방향을 작업물에서 적당히 떨어진 곳에 평행하게 배치합니다.
+First, load the path generation model `{LIBRARY}/PathGen/PathGenZ` into the workspace. Turn on the shift function and position the projection plane parallel to a suitable distance from the workpiece.
 
 ![](../_assets/path-gen-z/shift-surface.png)
 
-하나의 작업물은 한 개 이상의 face로 구성됩니다. HRSpace의 `리본 메뉴 - 홈 - 부분` 버튼을 누른 후, 작업물에서 도장 작업을 수행할 face들을 마우스로 클릭해 선택하십시오.
+One workpiece is composed of one or more faces. Press the `Ribbon Menu - Home - Part` button and click on the faces to be painted on the workpiece with the mouse.
 
 ![](../_assets/path-gen-z/sel-surface.png)
 
-PathGenZ에 대해 확장 속성을 여십시오. `Add work` 버튼을 클릭하고 작업물의 T경로를 입력합니다. 
- 
+Open the `Path Generator Z Properties`. Click the `Add work` button and input the T path of the workpiece.
+
 ![](../_assets/path-gen-z/add-work.png)
 
-이제 `Projection-plane 그룹 박스`에 있는 속성들을 대화상자의 그림과 아래 표를 참고하여 설정하면서, `Apply` 버튼을 눌러 3D 화면에 반영하십시오. 
+Now, refer to the dialog box and the table below to set the properties in the `Projection-plane` group box, and press the `Apply` button to reflect changes on the 3D screen.
 
 <table>
 <tr>
-    <th>속성명</th>
-    <th>설명</th>
-    <th>단위, 범위</th>
+    <th>Property Name</th>
+    <th>Description</th>
+    <th>Unit, Range</th>
 </tr>
 <tr>
     <td>Length</td>
-    <td>투영면의 길이 (스트로크 선분의 수직방향). 이 길이만큼만 경로가 진행됩니다. 
-(스트로크 선분의 길이는 무한한 것으로 간주됩니다.)</td>
+    <td>The length of the projection plane (in the vertical direction of the stroke line segment). The path will proceed only this distance. 
+(The length of the stroke line segment is considered infinite.)</td>
     <td>mm<br>>0</td>
 </tr>
 <tr>
     <td>Pitch</td>
-    <td>Stroke 간 간격</td>
+    <td>The distance between strokes.</td>
     <td>mm<br>>0</td>
 </tr>
 <tr>
     <td>In-offset</td>
-    <td>Inward-offset<br>진입 경유 스텝과 작업물 가장자리 간의 거리</td>
+    <td>Inward-offset<br>Distance between the inward waypoint step and the edge of the workpiece.</td>
     <td>mm<br>>0</td>
 </tr>
 <tr>
     <td>Out-offset</td>
-    <td>Outward-offset<br>진출 경유 스텝과 작업물 가장자리 간의 거리</td>
+    <td>Outward-offset<br>Distance between the outward waypoint step and the edge of the workpiece.</td>
     <td>mm<br>>0</td>
 </tr>
 <tr>
     <td>One-way</td>
-    <td>단 방향으로 도장 경로를 생성할 지 여부<br>
+    <td>Whether to generate painting paths only in one direction<br>
         <img src="../_assets/path-gen-z/one-way.png">
     </td>
     <td></td>
 </tr>
 <tr>
     <td>auto</td>
-    <td>Update 동작을 주기적으로 자동으로 수행할 지 여부.<br>
-        (On 시키면 조작이 더뎌질 수 있습니다.)</td>
+    <td>Whether to perform the Update operation automatically at regular intervals.<br>
+        (Turning it On may slow down operation.)</td>
     <td></td>
 </tr>
 <tr>
-    <td>Flip x</td>
-    <td>X 방향으로 경로를 뒤집을 지 여부</td>
+    <td>flip x</td>
+    <td>Whether to flip the path in the X direction.</td>
     <td></td>
 </tr>
 <tr>
-    <td>Flip y</td>
-    <td>Y 방향으로 경로를 뒤집을 지 여부</td>
+    <td>flip y</td>
+    <td>Whether to flip the path in the Y direction.</td>
     <td></td>
 </tr>
 </table>
 
-`Update` 버튼을 클릭하면 설정한 속성이 반영되면서 작업물 표면에 투영된 스트로크가 나타납니다. 투명면의 크기와 방향을 시프트 기능으로 조정하고, 스트로크 진행 폭과 간격을 속성으로 조정하면서 작업물 표면에 적절한 투영 스트로크를 만드십시오.
+Clicking the `Update` button will project the specified properties and display the strokes projected onto the surface of the workpiece. Adjust the size and direction of the transparent surface using the shift function, and create appropriate projected strokes on the surface of the workpiece by adjusting the stroke width and spacing as properties.
 
 ![](../_assets/path-gen-z/strokes.png)
 
-Job 버튼을 누른 후, 스텝들을 생성할 작업 프로그램을 트리 창에서 선택합니다. 스텝 생성에 관련된 속성은 아래 표에서 설명하고 있습니다.
+After pressing the Job button, select the work program in the tree view where the steps will be generated. The properties related to step generation are explained in the table below.
 
 ![](../_assets/path-gen-z/gen-steps.png)
 
 <table>
 <tr>
-    <th>속성명</th>
-    <th>설명</th>
-    <th>단위, 범위</th>
+    <th>Property Name</th>
+    <th>Description</th>
+    <th>Unit, Range</th>
 </tr>
 <tr>
-    <td>X, Y, Z</td><td>도료 토출 방향(작업물 표면에 수직)과 일치시킬 툴의 직교 축</td><td></td>
+    <td>X, Y, Z</td><td>The orthogonal axes of the tool aligned with the direction of paint discharge (perpendicular to the workpiece surface).</td><td></td>
 </tr>
 <tr>
-    <td>inverse</td><td>툴의 직교 축을 반대 방향으로 할 지 여부</td><td></td>
+    <td>inverse</td><td>Whether to set the orthogonal axes of the tool in the opposite direction.</td><td></td>
 </tr>
 <tr>
-    <td>fwd-align</td><td>forward-align<br>X, Y, Z에서 선택한 직교 축과는 다른 한 축을 TCP의 진행 방향으로 정렬할 지 여부</td><td></td>
+    <td>fwd-align</td><td>forward-align<br>Whether to align a different axis from the selected orthogonal axes in X, Y, Z with the forward direction of the TCP.</td><td></td>
 </tr>
 <tr>
     <td>Step gap</td>
-    <td>스텝간의 최소 간격. 곡면 상에 스텝이 생성될 때, 이 값이 작을수록 많은 스텝이 만들어집니다.</td>
+    <td>The minimum distance between steps. The smaller this value, the more steps are created when steps are generated on the curved surface.</td>
     <td>mm>0</td>
 </tr>
 </table>
 
-HRSpace의 `리본 메뉴 - 교시 탭`에서, 생성할 스텝들의 파라미터와 기준 좌표계를 설정하십시오. 특히 툴 번호는 도장 건의 스프레이 거리에 지정한 TCP와 일치하도록 유의해야 합니다. 예제에서는 `tcp1`이므로 툴 번호는 1로 지정했습니다.
+From the `Ribbon Menu - Teach Tab` of HRSpace, set the parameters and reference coordinate system for the steps to be created. Especially, take care that the tool number matches the TCP specified for the spray distance of the paint gun. In the example, the tool number is set to 1 since it is `tcp1`.
 
 ![](../_assets/path-gen-z/teach-tab.png)
 
-`Generate` 버튼을 클릭하면 지정한 작업 프로그램에 스텝들과 도장 명령문이 생성됩니다.
+Clicking the `Generate` button will create steps and painting commands in the designated work program.
 
 ![](../_assets/path-gen-z/job-generated.png)
 
-속성 값을 조정하여 작업 프로그램을 다시 생성하고 싶다면, 먼저 `Clear JOB` 버튼을 클릭하여 생성된 스텝을 삭제한 후 `Generate` 버튼을 클릭하십시오.
-아래 그림은 2.3 절에 설명한 도막 형성과 함께 시뮬레이션이 수행되는 모습을 보여주고 있습니다.
+If you want to regenerate the work program by adjusting property values, first click the `Clear JOB` button to delete the generated steps, and then click the `Generate` button.
+The figure below shows the simulation being performed along with the coating formation explained in Section 2.3.
 
 ![](../_assets/path-gen-z/simulation.png)
-
 [__SOURCE](2-ext-model/5-floor-plan.md)
-# 2.5. 바닥도면 (Floor Plan)
+# 2.5. Floor Plan
 
-바닥도면은 HRSpace 바닥에 CAD의 도면파일(.dxf)을 매핑하여, 신속한 배치 작업을 도와줄 수 있는 확장 모델입니다.
+The floor plan is an extension model that helps facilitate quick placement by mapping a CAD drawing file (.dxf) onto the HRSpace floor.
 
-모델 불러오기로 라이브러리의 `FloorPlan`을 불러옵니다.
+Load the library's `FloorPlan` via the model import option.
 
 ![](../_assets/load-model.png)
 ![](../_assets/floor-plan/load-floor-plan.png)
 
-3D화면에는 아직 아무 것도 나타나지 않습니다. 트리창에 생성된 모델(FloorPlan)에 대해 팝업 메뉴에서 확장 속성을 선택하여 바닥도면 속성 대화상자를 여십시오. (혹은 모델 속성 대화상자에서, ![](../_assets/bt-prop.png) 버튼을 클릭해도 됩니다.)
+No content is visible on the 3D screen yet. Open the floor plan properties dialog by selecting the extension properties from the popup menu of the created model (FloorPlan) in the tree view. (You can also click the ![](../_assets/bt-prop.png) button in the model properties dialog.)
 
 ![](../_assets/floor-plan/popup-menu-ext-prop.png)
 ![](../_assets/floor-plan/bt-prop-in-model-prop.png)
 
-파일 경로를 입력해줍니다. (혹은 파일 경로 입력란 우측의 ![](../_assets/bt-more.png) 버튼을 클릭해서 해당 위치의 파일을 선택해도 됩니다.)
+Enter the file path. (Alternatively, you can click the ![](../_assets/bt-more.png) button on the right side of the file path input field to select the file from that location.)
 
 ![](../_assets/floor-plan/bt-more-in-prop.png)
 
-[Ok] 버튼을 눌러줍니다.
+Press the `Ok` button.
 
 ![](../_assets/floor-plan/bt-ok-in-prop.png)
 
 ![](../_assets/floor-plan/progress-in-prop.png)
 
 
-파일 로딩이 완료되면, 팝업 된 메시지 박스에 정보가 출력됩니다.
+Once the file loading is complete, information will be displayed in the popup message box.
 
 ![](../_assets/floor-plan/msgbox-info.png)
 
-불러들인 도면을 확인 할 수 있습니다.
+You can check the imported drawing.
 
 ![](../_assets/floor-plan/loaded-plan.png)
 
-(파일의 용량이 크면 도면을 불러들이는 데에 수십 초가 걸릴 수도 있습니다.)
+(If the file size is large, it may take several tens of seconds to load the drawing.)
 
  
-![](../_assets/bt-shift.png) 기능을 사용하여 도면의 위치를 이동하여, 도면의 위치를 HRSpace의 원점과 적절히 일치시킵니다.
+Use the ![](../_assets/bt-gizmo.png) function to move the position of the drawing and align it appropriately with the origin of HRSpace.
 
 ![](../_assets/floor-plan/adjust-origin.png)
 
-바닥에 전시된 도면을 참고하며 배치 작업을 수행 합니다.
+Perform the placement task by referencing the displayed drawing on the floor.
 
 ![](../_assets/floor-plan/layout.png)
 
  
-바닥도면 확장모델은 다음과 같은 기능상 제약이 있습니다.
+The floor plan extension model has the following functional limitations.
 
-1. 색상 변환
-- HRSpace에 표시되는 도면의 색상이 원본과 일치하지 않을 수 있습니다.
+#### 1. Color Conversion
+- The colors of the drawing displayed in HRSpace may not match the original.
 
 <table>
 <tr>
-  <th>AutoCAD 화면</th>
-  <th>HRSpace 화면</th>
+  <th>AutoCAD Screen</th>
+  <th>HRSpace Screen</th>
 </tr>
 <tr>
   <td><img src="../_assets/floor-plan/screen-autocad.png"/></td>
@@ -464,63 +444,165 @@ HRSpace의 `리본 메뉴 - 교시 탭`에서, 생성할 스텝들의 파라미�
 </tr>
 </table>
 
-2. Text 미지원
-- Text는 표시되지 않습니다.
+#### 2. Text Not Supported
+- Text will not be displayed.
 
 <table>
 <tr>
-  <th>AutoCAD 화면</th>
-  <th>HRSpace 화면</th>
+  <th>AutoCAD Screen</th>
+  <th>HRSpace Screen</th>
 </tr>
 <tr>
   <td><img src="../_assets/floor-plan/screen-autocad2.png"/></td>
   <td><img src="../_assets/floor-plan/screen-hrspace2.png"/></td>
 </tr>
 </table>
-
 [__SOURCE](2-ext-model/6-conveyor-sync.md)
-# 2.6. 컨베이어 동기화 (Conveyor Sync)
+# 2.6. Conveyor Sync
 
--	"센서 동기" 기능 사용 방법을 먼저 숙지해주십시오. 
-  *	Hi5a 제어기 기능설명서 - 센서 동기
-  * [Hi6 제어기 기능설명서 - 센서 동기(컨베이어, 프레스)](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/ko/README?cont_model=Hi6)
-  * [Hi7 제어기 기능설명서 - 센서 동기(컨베이어, 프레스)](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/ko/README?cont_model=Hi7)
+- Please read the `Sensor Sync` manual first. 
+  * Hi5a Controller Function Manual - Sensor Sync
+  * [Hi6 Controller Function Manual - Sensor Sync (Conveyor, Press)](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/en/README?cont_model=Hi6)
+  * [Hi7 Controller Function Manual - Sensor Sync (Conveyor, Press)](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/en/README?cont_model=Hi7)
 
-컨베이어 동기화 확장모델은 HRSpace 에서 컨베이어의 Pulse와 Limit Switch 값을 생성하여, VRC 또는 Ethernet 시뮬레이터에 값을 전달, 컨베이어 동기화 시뮬레이션이 가능 하도록 도와줄 수 있는 확장 모델입니다.
+{% hint style="info" %}
+The Hi6/Hi7 conveyor synchronization feature is supported starting from HRSpace v4.10.0.
+{% endhint %}
 
-모델 불러오기로 라이브러리의 외부설비에서 `Conveyor(직선)` 또는, `conveyor_CCW(반시계 방향 원형)` 또는, `conveyor_CW(시계방향 원형)`를 불러옵니다.
+
+The conveyor sync extension model is an extension model in HRSpace that generates the Pulse Count and Limit Switch output of a conveyor and transmits them to the VRC, enabling conveyor synchronization simulation.
+
+Import `conveyor`, `conveyor_CCW (Counterclockwise Curve)`, or `conveyor_CW (Clockwise Curve)` from the external equipment library using `Load Model`.
 
 ![](../_assets/load-model.png)
 ![](../_assets/conv-sync/load-conveyor.png)
 
-MXConveyor 확장을 지정한 모델의 TPath를 `로봇 속성-동기`의 펄스 카운터 항목에 지정합니다.
 
-![](../_assets/conv-sync/robot-prop-sync.png)
- 
+## 2.6.1. Extension Properties Dialog
 
-트리창에 생성된 모델(FloorPlan)에 대해 팝업 메뉴에서 확장 속성을 선택하여 컨베이어 속성 대화상자를 여십시오. (모델 속성 대화상자에서, ![](../_assets/bt-prop.png) 버튼을 클릭해도 됩니다.) 
+Open the Conveyor Properties dialog by selecting `Extension Properties...` from the pop-up menu for the created model (conveyor) in the tree window. (You can also click the ![](../_assets/bt-prop.png) button in the `Model Properties` dialog.) 
 
 ![](../_assets/conv-sync/popup-menu-ext-prop.png)
 ![](../_assets/conv-sync/bt-prop-in-prop.png)
 ![](../_assets/conv-sync/conveyor-prop.png)
+
+
+The roles of each button are as follows:
+
+| Button Name | Role |
+|-----------|----------------------------------------------------------|
+| `start` | Starts the conveyor. `pulse cnt.` starts to increase. |
+| `stop` | Decelerates and stops the conveyor. |
+| `reset` | Resets the pulse count and workpiece position to 0, bringing it to a stopped state. It also outputs the `SyncReset` signal as a 500ms single pulse. |
+| `put` | Starts moving the workpiece on the conveyor. |
+| `J+`/`J-` | Jog buttons that move the conveyor forward or backward when stopped. |
+| `CCW`/`CW` | Displayed only for Curve-type conveyors. Selects Counterclockwise (CCW) / Clockwise (CW). |
+
+- By default, the workpiece is a rectangular box shape named `target`. If necessary, adjust the `Model Properties` to set the desired size, height, basic shape, or shape files such as STL. However, the name must remain `target`.
+
+
+You can configure the properties below in the table at the bottom. Settings are applied only after clicking the `Apply` button, and they can also be configured during operation.
+
+| Property Name |            Description                               |
+|-----------|----------------------------------------------------------|
+| `Stroke` | Workpiece outfeed position. Re-initialized to position 0 when `target` reaches this point. |
+| `Resolution` | Encoder resolution. Set this to the same value calculated and configured automatically in VRC in the procedure below |
+| `Speed` | Target speed of the conveyor. |
+| `Accel` | Acceleration of the conveyor. |
+| `Decel` | Deceleration of the conveyor. |
+| `LS position` | Limit switch position. When `target` reaches this point in the forward direction, the `LimitSwitch` signal and `LS` lamp turn on for 300ms.|
+
+
+## 2.6.2. Conveyor Settings 
+
+Referring to [Sensor Sync Parameter Settings](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/en/3-user-interface/3-3-sensor-sync-parameter?cont_model=Hi7), first set the sync state on the `Sensor Sync Parameter` screen of VTP to `Conveyor`, and set the conveyor type to `Linear` or `Circle`.
+
+![](../_assets/conv-sync/vtp-setup.png)
+
+
+### Controller Input Connection
+
+The robot controller performs operations in exact synchronization with the position of the workpiece on the conveyor. To achieve this, the robot controller receives the following 3 pieces of information as inputs from the conveyor to estimate the position of the workpiece. (Since the robot controller has 2 input channels, it can connect with up to 2 conveyors.)
+
+- `SyncReset`: Considers the current conveyor pulse input value as workpiece position 0. (1bit)
+- `LimitSwitch`: Reference position information of the workpiece (1bit) that turns ON when a workpiece moving along the conveyor activates a limit switch, such as an optical sensor.
+- `PulseCount`: Pulse information used to calculate the real-time speed of the conveyor (16bit).
+
+
+The method of receiving these 3 pieces of information varies depending on the controller model.
+
+- Hi5a Controller
+  * Dedicated Conveyor I/F Board (BD585)
+- Hi6/Hi7 Controller (Supports 2 methods)
+  * Dedicated Conveyor I/F Board (BD641T, BD681)
+  * Crevis FnIO Module M5112: Inputted as user input (di, diw).
+
+
+The conveyor model in the HRSpace virtual space must transmit the above 3 pieces of information to the Virtual Robot Controller (VRC) just like an actual conveyor. The connection method is as follows:
+
+
+- Dedicated Conveyor I/F Board
+
+  Assign the TPath of the conveyor model to the Pulse Counter item in `Robot Properties - Sync`. It is transferred internally without needing a virtual I/O connection.
+  
+  ![](../_assets/conv-sync/robot-prop-sync.png)
  
 
-속성 대화상자의 `START`를 클릭하면 컨베이어 동작이 시작됩니다.
-`put` 버튼을 클릭하면, Target의 동작이 시작됩니다.
+- FnIO Module Method
+
+  Set the assigned signals for `Syncronization reset`, `Limit switch input`, and `Pulse counter input (16bit)` under `Input Signal Assign` group on the `Sensor sync parameter` screen of VTP.
+
+  After creating an `I/O Connection` object in the workspace, open its properties and configure it. Connect the 3 output values of the conveyor model (`SyncReset`, `LimitSwitch`, `PulseCount`) to the respective `di` areas configured in VTP.
+
+  * Important: Since these output values must be transmitted to the VRC at a fast cycle, be sure to check the `Realtime` checkbox.
+
+  ![](../_assets/conv-sync/ioconn.png)
 
 
-## 2.6.1. 컨베이어의 동작
-
-![](../_assets/conv-sync/concept.png)
-
-
-## 2.6.2. Hi5a 제어기로의 데이터 전달 
-
-`PulseCount` 특성 값과 `LimitSwitch` I/O 값은 로봇 속성의 제어기 연결 설정에 따라 가상제어기 또는 이더넷으로 연결된 제어기로 전달됩니다.
-
-![](../_assets/conv-sync/sel-vrc.png)
-
-
-전달된 값은 센서 동기 화면에서 모니터링 할 수 있습니다. (Hi5a 제어기의 "센서 동기" 사용방법을 참조해 주세요)
+Open the `Sensor Sync` monitoring panel of VTP and verify if the pulse count and speed are displayed identically to those in the Extension Properties dialog. If confirmed, it is connected properly.
 
 ![](../_assets/conv-sync/monitor-pane.png)
+
+
+### Limit Switch and Outfeed Position
+
+- Check the appropriate workpiece outfeed position, then enter the position value into the `Stroke` property.
+- Check the appropriate position to place the limit switch, then enter the position value into the `LS position` property.
+  * When the workpiece passes the limit switch, check if `Limit Switch Input` in the `Sensor Sync` monitoring panel of VTP momentarily changes to 1 and whether `Entered Workpiece Count` increases.
+
+
+### Conveyor Angle
+
+Referring to the Sensor Sync manual, perform the automatic conveyor angle setting in the virtual space using VTP. (You can execute this while moving the workpiece using the `J+`, `J-`, or `start`, `stop` buttons in the Conveyor Properties dialog.)
+
+
+### Encoder Resolution
+
+Referring to the Sensor Sync manual, perform the automatic conveyor encoder resolution setting in the virtual space using VTP. Enter the same value as the configured encoder resolution in the `Resolution` field of the Extension Properties dialog, then click the `Apply` button to reflect it.
+
+
+### Saving
+
+Once each setting is completed, save the entire HRSpace project.
+
+
+## 2.6.3. Teaching
+
+Referring to the Sensor Sync manual, teach the conveyor sync operation.
+Position the workpiece at a suitable location using the `J+` and `J-` buttons, then perform teaching for the workpiece while the conveyor is stopped.
+
+![](../_assets/conv-sync/teach-3d.png)
+![](../_assets/conv-sync/teach-vtp.png)
+
+
+## 2.6.4. Conveyor Sync Simulation
+
+Initialize the conveyor and workpiece position using the `reset` button, start the conveyor using the `start` button, and dispatch the workpiece from the initial position using the `put` button.
+When the taught job is executed, the robot will wait at the `cv.wait` statement (for Hi6/Hi7). Once the workpiece reaches the limit switch position, the robot starts the conveyor sync operation.
+
+
+## 2.6.5. Ethernet Data Transmission to Actual Hi5a Controller
+
+If you set `Robot Properties - Controller connection` to `ENetHi5`, the `PulseCount` property value and `LimitSwitch` I/O values are also transmitted to the actual Hi5a controller via Ethernet. (Hi6/Hi7 are not supported.)
+
+![](../_assets/conv-sync/sel-vrc.png)
