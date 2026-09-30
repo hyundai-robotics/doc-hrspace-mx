@@ -34,7 +34,7 @@
 (파일의 용량이 크면 도면을 불러들이는 데에 수십 초가 걸릴 수도 있습니다.)
 
  
-![](../_assets/bt-shift.png) 기능을 사용하여 도면의 위치를 이동하여, 도면의 위치를 HRSpace의 원점과 적절히 일치시킵니다.
+![](../_assets/bt-gizmo.png) 기능을 사용하여 도면의 위치를 이동하여, 도면의 위치를 HRSpace의 원점과 적절히 일치시킵니다.
 
 ![](../_assets/floor-plan/adjust-origin.png)
 
