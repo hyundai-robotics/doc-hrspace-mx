@@ -1,1 +1,1 @@
-﻿# About This Manual
+﻿# About the Manual
