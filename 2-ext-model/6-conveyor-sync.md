@@ -55,7 +55,9 @@ You can configure the properties below in the table at the bottom. Settings are 
 
 ## 2.6.2. Conveyor Settings 
 
-Referring to [Sensor Sync Parameter Settings](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/en/3-user-interface/3-3-sensor-sync-parameter?cont_model=Hi7), first set the sync state on the `Sensor Sync Parameter` screen of VTP to `Conveyor`, and set the conveyor type to `Linear` or `Circular`.
+Referring to [Sensor Sync Parameter Settings](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/en/3-user-interface/3-3-sensor-sync-parameter?cont_model=Hi7), first set the sync state on the `Sensor Sync Parameter` screen of VTP to `Conveyor`, and set the conveyor type to `Linear` or `Circle`.
+
+![](../_assets/conv-sync/vtp-setup.png)
 
 
 ### Controller Input Connection
@@ -72,7 +74,7 @@ The method of receiving these 3 pieces of information varies depending on the co
 - Hi5a Controller
   * Dedicated Conveyor I/F Board (BD585)
 - Hi6/Hi7 Controller (Supports 2 methods)
-  * Dedicated Conveyor I/F Board
+  * Dedicated Conveyor I/F Board (BD641T, BD681)
   * Crevis FnIO Module M5112: Inputted as user input (di, diw).
 
 
