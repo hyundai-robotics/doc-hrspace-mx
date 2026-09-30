@@ -1,3 +1,3 @@
-# 1. Overview
+# 1. Preface
 
-This is based on HRSpace v4.9.2 or higher.
+This manual is based on HRSpace v4.9.2 or higher.

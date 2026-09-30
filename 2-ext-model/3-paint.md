@@ -1,12 +1,12 @@
 # 2.3. Paint Gun, Paint Work
 
-Using the paint gun and the paint work extension model, the simulation visually represents the formation of the coating on the surface of the 3D workpiece. It helps to determine whether the coating is not formed in certain areas of the workpiece or is excessively overlapped.
+Using the `PaintGun` and the `PaintWork` extension model, the simulation visually represents the formation of the coating on the surface of the 3D workpiece. It helps to determine whether the coating is not formed in certain areas of the workpiece or is excessively overlapped.
 
 {% hint style="warning" %}
 The painting application feature is only available on the Hi5a controller, and it is currently not available on Hi6/Hi7.
 {% endhint %}
 
-Let’s assume that a workspace like the one below has been created, and we will add the coating formation function in this state. The workspace has two YP020 units, each equipped with the paint gun (`tap/bell`). The workpiece (`part`) on the shuttle (`/conveyor/guide`) moves between the robots, and the paint discharged from the two paint guns must form a coating on the surface of this workpiece.
+Let’s assume that a workspace like the one below has been created, and we will add the coating formation function in this state. The workspace has two `YP020` units, each equipped with the paint gun (`tap/bell`). The workpiece (`part`) on the shuttle (`/conveyor/guide`) moves between the robots, and the paint discharged from the two paint guns must form a coating on the surface of this workpiece.
 
 ![](../_assets/paint/objective.png)
 
@@ -102,7 +102,7 @@ Open the extension properties of the paint gun `/YP020/tap/bell/crd` and set the
 </tr>
 </table>
 
-When paint is continuously sprayed at a certain point on the workpiece surface, the thickness data value of that point continuously increases internally. However, once the thickness reaches the AmountMax setting, it no longer increases.
+When paint is continuously sprayed at a certain point on the workpiece surface, the thickness data value of that point continuously increases internally. However, once the thickness reaches the `AmountMax` setting, it no longer increases.
 
 The thickness data value of the workpiece surface is expressed in an appropriate color depending on whether the ColorMinUsed property is checked, as shown in the table below.
 

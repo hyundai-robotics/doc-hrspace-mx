@@ -5,18 +5,18 @@
   * [Hi6 Controller Function Manual - Sensor Sync (Conveyor, Press)](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/en/README?cont_model=Hi6)
   * [Hi7 Controller Function Manual - Sensor Sync (Conveyor, Press)](https://hrbook-hrc.web.app/#/view/doc-sensor-sync/en/README?cont_model=Hi7)
 
-The Conveyor Sync expansion model helps simulate conveyor synchronization by generating the Pulse and Limit Switch values of the conveyor in HRSpace and transmitting those values to the VRC or Ethernet simulator.
+The Conveyor Sync extension model helps simulate conveyor synchronization by generating the Pulse and Limit Switch values of the conveyor in HRSpace and transmitting those values to the VRC or Ethernet simulator.
 
 Load `Conveyor (Linear)` or `conveyor_CCW (Counterclockwise Circular)` or `conveyor_CW (Clockwise Circular)` from the external equipment in the library using the model loading feature.
 
 ![](../_assets/load-model.png)
 ![](../_assets/conv-sync/load-conveyor.png)
 
-Specify the TPath of the designated MXConveyor expansion model in the Pulse Counter section of `Robot Properties - Sync`.
+Specify the TPath of the designated MXConveyor extension model in the Pulse Counter section of `Robot Properties - Sync`.
 
 ![](../_assets/conv-sync/robot-prop-sync.png)
 
-For the created model (FloorPlan) in the tree view, select the expansion properties from the popup menu to open the conveyor properties dialog. (You can also click the ![](../_assets/bt-prop.png) button in the model properties dialog.)
+For the created model (FloorPlan) in the tree view, select the extension properties from the popup menu to open the conveyor properties dialog. (You can also click the ![](../_assets/bt-prop.png) button in the model properties dialog.)
 
 ![](../_assets/conv-sync/popup-menu-ext-prop.png)
 ![](../_assets/conv-sync/bt-prop-in-prop.png)

@@ -16,7 +16,7 @@ Enter the file path. (Alternatively, you can click the ![](../_assets/bt-more.pn
 
 ![](../_assets/floor-plan/bt-more-in-prop.png)
 
-Press the [Ok] button.
+Press the `Ok` button.
 
 ![](../_assets/floor-plan/bt-ok-in-prop.png)
 
@@ -34,7 +34,7 @@ You can check the imported drawing.
 (If the file size is large, it may take several tens of seconds to load the drawing.)
 
  
-Use the ![](../_assets/bt-shift.png) function to move the position of the drawing and align it appropriately with the origin of HRSpace.
+Use the ![](../_assets/bt-gizmo.png) function to move the position of the drawing and align it appropriately with the origin of HRSpace.
 
 ![](../_assets/floor-plan/adjust-origin.png)
 
@@ -45,7 +45,7 @@ Perform the placement task by referencing the displayed drawing on the floor.
  
 The floor plan extension model has the following functional limitations.
 
-1. Color Conversion
+#### 1. Color Conversion
 - The colors of the drawing displayed in HRSpace may not match the original.
 
 <table>
@@ -59,7 +59,7 @@ The floor plan extension model has the following functional limitations.
 </tr>
 </table>
 
-2. Text Not Supported
+#### 2. Text Not Supported
 - Text will not be displayed.
 
 <table>

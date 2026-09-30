@@ -1,1 +1,1 @@
-# 2. Extended Model
+# 2. Extension Models

@@ -2,7 +2,7 @@
 
 Based on the shape of the 3D workpiece imported into the workspace, this function automatically generates a zigzag path for the workpiece surface (face).
 
-In general, the robot path for painting operations proceeds in a zigzag shape as shown in the figure below. To conveniently adjust the direction of progress and the distance to the workpiece surface, the `PathGenZ` module is represented as a virtual plane object called the `projection-plane`. This plane can be freely moved and rotated using the shift function of HRSpace, just like other HRSpace models.
+In general, the robot path for painting operations proceeds in a zigzag shape as shown in the figure below. To conveniently adjust the direction of progress and the distance to the workpiece surface, the `PathGenZ` module is represented as a virtual plane object called the `projection-plane`. This plane can be freely moved and rotated using the `Gizmo` function of HRSpace, just like other HRSpace models.
 
 ![](../_assets/path-gen-z/proj-plane.png)
 
@@ -11,7 +11,7 @@ Additionally, for a clean painting operation, there must be waypoint steps outsi
 
 ![](../_assets/path-gen-z/offset.png)
 
-Assuming the workspace is prepared as follows: one painting robot (YP020) and one painting workpiece (part) are placed, the tool is set to tcp1, and an empty work program (0005.JOB) has been created. The paint gun output signal (`/YP020/Y5`) is connected to the paint gun (bell) attached to the robot to visualize the coating. A T path for the paint gun has been specified for the painting workpiece (part). (For details on the coating visualization settings, refer to Section 2.3.)
+Assuming the workspace is prepared as follows: one painting robot (YP020) and one painting workpiece (part) are placed, the tool is set to `tcp1`, and an empty work program (0005.JOB) has been created. The paint gun output signal (`/YP020/Y5`) is connected to the paint gun (bell) attached to the robot to visualize the coating. A T path for the paint gun has been specified for the painting workpiece (part). (For details on the coating visualization settings, refer to Section 2.3.)
 
 ![](../_assets/path-gen-z/pathgen-test.png)
 
@@ -23,11 +23,11 @@ One workpiece is composed of one or more faces. Press the `Ribbon Menu - Home - 
 
 ![](../_assets/path-gen-z/sel-surface.png)
 
-Expand the properties for PathGenZ. Click the `Add work` button and input the T path of the workpiece.
+Open the `Path Generator Z Properties`. Click the `Add work` button and input the T path of the workpiece.
 
 ![](../_assets/path-gen-z/add-work.png)
 
-Now, refer to the dialog box and the table below to set the properties in the `Projection-plane group box`, and press the `Apply` button to reflect changes on the 3D screen.
+Now, refer to the dialog box and the table below to set the properties in the `Projection-plane` group box, and press the `Apply` button to reflect changes on the 3D screen.
 
 <table>
 <tr>
@@ -70,12 +70,12 @@ Now, refer to the dialog box and the table below to set the properties in the `P
     <td></td>
 </tr>
 <tr>
-    <td>Flip x</td>
+    <td>flip x</td>
     <td>Whether to flip the path in the X direction.</td>
     <td></td>
 </tr>
 <tr>
-    <td>Flip y</td>
+    <td>flip y</td>
     <td>Whether to flip the path in the Y direction.</td>
     <td></td>
 </tr>

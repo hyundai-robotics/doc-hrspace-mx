@@ -1,1 +1,1 @@
-# Hi5/Hi6/Hi7 Controller Function Description - HRSpace4 Extended Model
+# Hi5/Hi6/Hi7 Controller Function Description - HRSpace4 Extension Model
